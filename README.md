@@ -7,5 +7,6 @@
   <li><a href="https://youtu.be/NUNlVjt82m8?si=D3l5AdSN8O-p82sF">Programming a Chess Game in C# | Part 3 - Pieces & The Board</a></li>
   <li><a href="https://youtu.be/Z1Zi41eiNGs?si=xNF-iZeh55_JUFt9">Programming a Chess Game in C# | Part 4 - Drawing the Board</a></li>
   <li><a href="https://youtu.be/RDD48hIgAqU?si=7YShhi_NNCnkcQJd">Programming a Chess Game in C# | Part 5 - Generating Moves</a></li>
-  <li><a href="https://youtu.be/3z_EitUuTWI?si=EiZziwzdydU_mI3z">Programming a Chess Game in C# | Part 6 - Generating Moves II</li>
+  <li><a href="https://youtu.be/3z_EitUuTWI?si=EiZziwzdydU_mI3z">Programming a Chess Game in C# | Part 6 - Generating Moves II</a></li>
+  <li><a href="https://youtu.be/cpGusMTczTQ?si=wnprhQ_Ly9Dq0WoW">Programming a Chess Game in C# | Part 7 - Handling Moves</a></li>
 </ol>
