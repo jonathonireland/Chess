@@ -22,3 +22,4 @@ C:\Users\user\source\repos\Chess\ChessUI\obj\Debug\net8.0-windows\refint\ChessUI
 C:\Users\user\source\repos\Chess\ChessUI\obj\Debug\net8.0-windows\ChessUI.pdb
 C:\Users\user\source\repos\Chess\ChessUI\obj\Debug\net8.0-windows\ChessUI.genruntimeconfig.cache
 C:\Users\user\source\repos\Chess\ChessUI\obj\Debug\net8.0-windows\ref\ChessUI.dll
+C:\Users\user\source\repos\Chess\ChessUI\obj\Debug\net8.0-windows\ChessUI.sourcelink.json
