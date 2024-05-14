@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ChessLogic",
+    "\\ChessUI"
   ],
-  "SelectedNode": "\\Chess.sln",
+  "SelectedNode": "\\ChessUI\\ChessCursors.cs",
   "PreviewInSolutionExplorer": false
 }

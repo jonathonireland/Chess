@@ -1,4 +1,11 @@
-﻿namespace ChessLogic
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ChessLogic
 {
     public enum Player
     {
@@ -9,7 +16,7 @@
 
     public static class PlayerExtensions
     {
-        public static Player Opponenent(this Player player) 
+        public static Player Opponent(this Player player) 
         {
             return player switch
             {
