@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\Chess\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7EE38392-BDB1-40C0-AEAD-FA04B882C9DC}|ChessUI\\ChessUI.csproj|c:\\users\\user\\source\\repos\\chess\\chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EE38392-BDB1-40C0-AEAD-FA04B882C9DC}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|c:\\users\\user\\source\\repos\\chess\\chesslogic\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|solutionrelative:chesslogic\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7EE38392-BDB1-40C0-AEAD-FA04B882C9DC}|ChessUI\\ChessUI.csproj|c:\\users\\user\\source\\repos\\chess\\chessui\\chesscursors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7EE38392-BDB1-40C0-AEAD-FA04B882C9DC}|ChessUI\\ChessUI.csproj|solutionrelative:chessui\\chesscursors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|c:\\users\\user\\source\\repos\\chess\\chesslogic\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|solutionrelative:chesslogic\\gamestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|c:\\users\\user\\source\\repos\\chess\\chesslogic\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|solutionrelative:chesslogic\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|c:\\users\\user\\source\\repos\\chess\\chesslogic\\pieces\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|solutionrelative:chesslogic\\pieces\\king.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|c:\\users\\user\\source\\repos\\chess\\chesslogic\\pieces\\pawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|solutionrelative:chesslogic\\pieces\\pawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|c:\\users\\user\\source\\repos\\chess\\chesslogic\\pieces\\piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{385F51D6-1D46-429F-B00F-5C95525DC17F}|ChessLogic\\ChessLogic.csproj|solutionrelative:chesslogic\\pieces\\piece.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -41,68 +37,59 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessUI\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "ChessUI\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessUI\\MainWindow.xaml.cs",
-              "RelativeToolTip": "ChessUI\\MainWindow.xaml.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwG8AAAA6AAAA",
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Board.cs",
+              "RelativeDocumentMoniker": "ChessLogic\\Board.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Board.cs",
+              "RelativeToolTip": "ChessLogic\\Board.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAiwAYAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T22:24:39.856Z",
+              "WhenOpened": "2024-05-25T07:07:53.082Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ChessCursors.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessUI\\ChessCursors.cs",
-              "RelativeDocumentMoniker": "ChessUI\\ChessCursors.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessUI\\ChessCursors.cs",
-              "RelativeToolTip": "ChessUI\\ChessCursors.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAABAAAA",
+              "Title": "King.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Pieces\\King.cs",
+              "RelativeDocumentMoniker": "ChessLogic\\Pieces\\King.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Pieces\\King.cs",
+              "RelativeToolTip": "ChessLogic\\Pieces\\King.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAIwDwAAABFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T21:53:16.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Player.cs",
-              "RelativeDocumentMoniker": "ChessLogic\\Player.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Player.cs",
-              "RelativeToolTip": "ChessLogic\\Player.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T21:46:20.439Z",
+              "WhenOpened": "2024-05-25T07:04:26.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GameState.cs",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\GameState.cs",
-              "RelativeDocumentMoniker": "ChessLogic\\GameState.cs",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\GameState.cs",
-              "RelativeToolTip": "ChessLogic\\GameState.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T21:41:35.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Pawn.cs",
               "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Pieces\\Pawn.cs",
               "RelativeDocumentMoniker": "ChessLogic\\Pieces\\Pawn.cs",
               "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Pieces\\Pawn.cs",
               "RelativeToolTip": "ChessLogic\\Pieces\\Pawn.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAIwC4AAAAxAAAA",
+              "ViewState": "AQIAADIAAAAAAAAAAAAuwFMAAABJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T16:36:47.204Z",
+              "WhenOpened": "2024-05-25T07:02:02.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Piece.cs",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Pieces\\Piece.cs",
+              "RelativeDocumentMoniker": "ChessLogic\\Pieces\\Piece.cs",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\Chess\\ChessLogic\\Pieces\\Piece.cs",
+              "RelativeToolTip": "ChessLogic\\Pieces\\Piece.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACsAAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-25T06:57:12.199Z",
               "EditorCaption": ""
             }
           ]
