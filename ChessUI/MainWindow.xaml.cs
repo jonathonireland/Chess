@@ -65,7 +65,7 @@ namespace ChessUI
 
         private void BoardGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (gameState.CurrentPlayer != Player.White)
+            if (gameState.IsGameOver || gameState.CurrentPlayer != Player.White)
             {
                 return;
             }
@@ -76,7 +76,7 @@ namespace ChessUI
             if (selectedPos == null)
             {
                 OnFromPositionSelected(pos);
-            } 
+            }
             else
             {
                 OnToPositionSelected(pos);
@@ -87,7 +87,7 @@ namespace ChessUI
         {
             IEnumerable<Move> moves = gameState.LegalMovesForPiece(pos);
 
-            if (moves.Any()) 
+            if (moves.Any())
             {
                 selectedPos = pos;
                 CacheMoves(moves);
@@ -111,6 +111,11 @@ namespace ChessUI
 
             DrawBoard(gameState.Board);
             SetCursor(gameState.CurrentPlayer);
+
+            if (ShowGameOverIfNeeded())
+            {
+                return;
+            }
 
             await MakeAiMoveIfNeeded();
         }
@@ -153,11 +158,11 @@ namespace ChessUI
 
         private void SetCursor(Player player)
         {
-            if(player == Player.White)
+            if (player == Player.White)
             {
                 Cursor = ChessCursors.WhiteCursor;
-            } 
-            else 
+            }
+            else
             {
                 Cursor = ChessCursors.BlackCursor;
             }
@@ -165,12 +170,17 @@ namespace ChessUI
 
         private async Task MakeAiMoveIfNeeded()
         {
-            if (gameState.CurrentPlayer != Player.Black)
+            if (gameState.IsGameOver || gameState.CurrentPlayer != Player.Black)
             {
                 return;
             }
 
             await Task.Delay(500);
+
+            if (gameState.IsGameOver)
+            {
+                return;
+            }
 
             Move aiMove = SimpleAi.ChooseMove(gameState);
 
@@ -183,6 +193,19 @@ namespace ChessUI
 
             DrawBoard(gameState.Board);
             SetCursor(gameState.CurrentPlayer);
+            ShowGameOverIfNeeded();
+        }
+
+        private bool ShowGameOverIfNeeded()
+        {
+            if (!gameState.IsGameOver)
+            {
+                return false;
+            }
+
+            string winner = gameState.Winner == Player.White ? "White" : "Black";
+            MessageBox.Show($"{winner} wins!", "Game Over", MessageBoxButton.OK, MessageBoxImage.Information);
+            return true;
         }
     }
 }
