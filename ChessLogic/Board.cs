@@ -61,5 +61,20 @@ namespace ChessLogic
         {
             return this[pos] == null;
         }
+
+        public Board Copy()
+        {
+            Board copy = new Board();
+
+            for (int row = 0; row < 8; row++)
+            {
+                for (int col = 0; col < 8; col++)
+                {
+                    copy[row, col] = pieces[row, col]?.Copy();
+                }
+            }
+
+            return copy;
+        }
     }
 }
