@@ -33,5 +33,34 @@ namespace ChessLogic
             move.Execute(Board);
             CurrentPlayer = CurrentPlayer.Opponent();
         }
+
+        public IEnumerable<Move> LegalMovesForPlayer(Player player)
+        {
+            List<Move> moves = new();
+
+            for (int row = 0; row < 8; row++)
+            {
+                for (int col = 0; col < 8; col++)
+                {
+                    Position pos = new Position(row, col);
+
+                    if (Board.IsEmpty(pos))
+                    {
+                        continue;
+                    }
+
+                    Piece piece = Board[pos];
+
+                    if (piece.Color != player)
+                    {
+                        continue;
+                    }
+
+                    moves.AddRange(piece.GetMoves(pos, Board));
+                }
+            }
+
+            return moves;
+        }
     }
 }

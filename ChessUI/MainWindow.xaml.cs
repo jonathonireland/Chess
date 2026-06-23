@@ -65,6 +65,11 @@ namespace ChessUI
 
         private void BoardGrid_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            if (gameState.CurrentPlayer != Player.White)
+            {
+                return;
+            }
+
             Point point = e.GetPosition(BoardGrid);
             Position pos = ToSquarePosition(point);
 
@@ -100,11 +105,14 @@ namespace ChessUI
             }
         }
 
-        private void HandleMove(Move move)
+        private async void HandleMove(Move move)
         {
             gameState.MakeMove(move);
+
             DrawBoard(gameState.Board);
             SetCursor(gameState.CurrentPlayer);
+
+            await MakeAiMoveIfNeeded();
         }
 
         private Position ToSquarePosition(Point point)
@@ -153,6 +161,28 @@ namespace ChessUI
             {
                 Cursor = ChessCursors.BlackCursor;
             }
+        }
+
+        private async Task MakeAiMoveIfNeeded()
+        {
+            if (gameState.CurrentPlayer != Player.Black)
+            {
+                return;
+            }
+
+            await Task.Delay(500);
+
+            Move aiMove = SimpleAi.ChooseMove(gameState);
+
+            if (aiMove == null)
+            {
+                return;
+            }
+
+            gameState.MakeMove(aiMove);
+
+            DrawBoard(gameState.Board);
+            SetCursor(gameState.CurrentPlayer);
         }
     }
 }
