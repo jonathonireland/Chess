@@ -25,6 +25,8 @@ This project began as a learning exercise following a multi-part tutorial series
 
 After completing the tutorial series, additional functionality was implemented independently:
 
+- Added smarter AI Player Moves
+- Added King-safety validation and dialog that pops up when player is in check.
 - Added AI-controlled Black player
 - Automated computer turns
 - Legal move selection for computer-controlled pieces
@@ -58,8 +60,6 @@ This project was originally built by following the excellent tutorial series bel
 
 ## Future Improvements
 
-- Smarter AI opponent
-- Check/checkmate validation
 - Castling
 - En passant
 - Pawn promotion UI improvements
