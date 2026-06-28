@@ -51,6 +51,18 @@ namespace ChessUI
             }
         }
 
+        private void ShowCheckIfNeeded()
+        {
+            if (gameState.IsCheck)
+            {
+                MessageBox.Show(
+                    $"{gameState.CurrentPlayer} is in check!",
+                    "Check",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+        }
+
         private void DrawBoard(Board board)
         {
             for (int r = 0; r < 8; r++)
@@ -115,6 +127,15 @@ namespace ChessUI
             if (ShowGameOverIfNeeded())
             {
                 return;
+            }
+
+            if (gameState.IsCheck)
+            {
+                MessageBox.Show(
+                    $"{gameState.CurrentPlayer} is in check!",
+                    "Check",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
             }
 
             await MakeAiMoveIfNeeded();
