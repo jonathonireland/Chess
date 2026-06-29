@@ -5,27 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChessUI"
         mc:Ignorable="d"
-        Title="MainWindow" Width="600" SizeToContent="Height"
+        Title="Chess" Width="760" SizeToContent="Height"
         Icon="Assets/icon.ico"
         WindowStartupLocation="CenterScreen"
         Background="#101010">
     <Viewbox>
-        <Grid x:Name="BoardGrid"
-              Width="600"
-              Height="600"
-              MouseDown="BoardGrid_MouseDown">
-            <Grid.Background>
-                <ImageBrush ImageSource="Assets/Board.png"/>
-            </Grid.Background>
+        <Grid Width="760" Height="600">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="160"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid x:Name="BoardGrid"
+                  Grid.Column="0"
+                  Width="600"
+                  Height="600"
+                  MouseDown="BoardGrid_MouseDown">
+                <Grid.Background>
+                    <ImageBrush ImageSource="Assets/Board.png"/>
+                </Grid.Background>
+
                 <UniformGrid x:Name="HighlightGrid"
                              Rows="8"
-                             Columns="8">
-                </UniformGrid>
+                             Columns="8" />
+
                 <UniformGrid x:Name="PieceGrid"
-                         Rows="8"
-                         Columns="8"
-                         RenderOptions.BitmapScalingMode="HighQuality">
-            </UniformGrid>
+                             Rows="8"
+                             Columns="8"
+                             RenderOptions.BitmapScalingMode="HighQuality" />
+            </Grid>
+
+            <Border Grid.Column="1"
+                    Margin="14,0,0,0"
+                    Padding="12"
+                    Background="#1A1A1A"
+                    BorderBrush="#333333"
+                    BorderThickness="1"
+                    CornerRadius="10">
+                <StackPanel>
+                    <TextBlock Text="Captured"
+                               Foreground="White"
+                               FontSize="20"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,18" />
+
+                    <TextBlock Text="White captured"
+                               Foreground="#DDDDDD"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,8" />
+
+                    <WrapPanel x:Name="WhiteCapturedPanel"
+                               MinHeight="190"
+                               Margin="0,0,0,22" />
+
+                    <TextBlock Text="Black captured"
+                               Foreground="#DDDDDD"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,8" />
+
+                    <WrapPanel x:Name="BlackCapturedPanel"
+                               MinHeight="190" />
+                </StackPanel>
+            </Border>
         </Grid>
     </Viewbox>
 </Window>
