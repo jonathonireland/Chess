@@ -31,6 +31,7 @@ namespace ChessUI
 
             gameState = new GameState(Player.White, Board.Initial());
             DrawBoard(gameState.Board);
+            DrawCapturedPieces();
             SetCursor(gameState.CurrentPlayer);
         }
 
@@ -73,6 +74,54 @@ namespace ChessUI
                     pieceImages[r, c].Source = Images.GetImage(piece);
                 }
             }
+        }
+
+        private void DrawCapturedPieces()
+        {
+            WhiteCapturedPanel.Children.Clear();
+            BlackCapturedPanel.Children.Clear();
+
+            foreach (Piece piece in SortCapturedPieces(gameState.CapturedBlackPieces))
+            {
+                WhiteCapturedPanel.Children.Add(CreateCapturedPieceImage(piece));
+            }
+
+            foreach (Piece piece in SortCapturedPieces(gameState.CapturedWhitePieces))
+            {
+                BlackCapturedPanel.Children.Add(CreateCapturedPieceImage(piece));
+            }
+        }
+
+        private static IEnumerable<Piece> SortCapturedPieces(IEnumerable<Piece> pieces)
+        {
+            return pieces.OrderByDescending(piece => GetPieceSortValue(piece.Type));
+        }
+
+        private static int GetPieceSortValue(PieceType type)
+        {
+            return type switch
+            {
+                PieceType.Queen => 5,
+                PieceType.Rook => 4,
+                PieceType.Bishop => 3,
+                PieceType.Knight => 2,
+                PieceType.Pawn => 1,
+                _ => 0
+            };
+        }
+
+        private static Image CreateCapturedPieceImage(Piece piece)
+        {
+            Image image = new Image
+            {
+                Source = Images.GetImage(piece),
+                Width = 30,
+                Height = 30,
+                Margin = new Thickness(1)
+            };
+
+            RenderOptions.SetBitmapScalingMode(image, BitmapScalingMode.HighQuality);
+            return image;
         }
 
         private void BoardGrid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -122,6 +171,7 @@ namespace ChessUI
             gameState.MakeMove(move);
 
             DrawBoard(gameState.Board);
+            DrawCapturedPieces();
             SetCursor(gameState.CurrentPlayer);
 
             if (ShowGameOverIfNeeded())
@@ -213,6 +263,7 @@ namespace ChessUI
             gameState.MakeMove(aiMove);
 
             DrawBoard(gameState.Board);
+            DrawCapturedPieces();
             SetCursor(gameState.CurrentPlayer);
             ShowGameOverIfNeeded();
         }
