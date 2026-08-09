@@ -1,67 +1,90 @@
 # C# Chess Game
 
-A desktop Chess application built with C# and WPF.
+A desktop chess application built with C#, .NET 8, and Windows Presentation Foundation (WPF). The solution separates reusable chess rules from presentation concerns through dedicated `ChessLogic` and `ChessUI` projects.
 
-This project began as a learning exercise following a multi-part tutorial series and was later extended with custom functionality, including a computer-controlled opponent.
+This project began as a guided learning exercise and was later extended with independently implemented game logic, user-interface improvements, and a computer-controlled opponent.
 
 ## Features
 
-- Chess board rendered with WPF
-- Full piece movement logic
-- Legal move generation and validation
-- Turn-based gameplay
-- White vs Black play
-- Computer-controlled Black player (AI)
-- Game state management and move processing
+- Complete 8 × 8 chess board with standard starting positions
+- Legal move generation for pawns, knights, bishops, rooks, queens, and kings
+- King-safety validation that rejects moves leaving the current player in check
+- Check notifications
+- King-side and queen-side castling with movement, obstruction, and attacked-square validation
+- Legal-move highlighting
+- Captured-piece tracking and display
+- Human White player versus computer-controlled Black player
+- Material-based AI move scoring with randomized tie-breaking
+- Turn and game-state management
+
+## Architecture
+
+- **ChessLogic** — board representation, pieces, moves, rule validation, game state, and AI selection
+- **ChessUI** — WPF board rendering, input handling, captured-piece display, move highlighting, and computer-turn orchestration
+
+Keeping the rules independent from the UI makes the game logic easier to reason about, extend, and test.
 
 ## Technologies
 
 - C#
-- .NET
-- WPF (Windows Presentation Foundation)
-- Object-Oriented Design
+- .NET 8
+- WPF
+- Object-oriented design
+- LINQ
+- Asynchronous UI workflows
 
-## Recent Enhancements
+## Run Locally
 
-After completing the tutorial series, additional functionality was implemented independently:
+### Prerequisites
 
-- Added smarter AI Player Moves
-- Added King-safety validation and dialog that pops up when player is in check.
-- Added AI-controlled Black player
-- Automated computer turns
-- Legal move selection for computer-controlled pieces
-- Foundation for future AI improvements such as:
-  - Capture prioritization
-  - Piece evaluation scoring
-  - Minimax search
-  - Checkmate detection
+- Windows
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 
-## Learning Objectives
+### Start the application
 
-This project was used to strengthen skills in:
+```bash
+dotnet restore
+dotnet run --project ChessUI/ChessUI.csproj
+```
 
-- Object-Oriented Programming
-- Game state management
-- Move generation algorithms
-- Desktop application development with WPF
-- AI decision-making concepts
+You can also open `Chess.sln` in Visual Studio and run the `ChessUI` project.
+
+## Controls
+
+Select a White piece, then select one of its highlighted legal destination squares. After the move completes, the Black AI automatically chooses and executes its response.
+
+## AI Strategy
+
+The current AI evaluates every legal Black move, applies it to a copy of the board, and scores the resulting material balance using standard relative piece values. It selects randomly among equally scored moves, producing legal and varied play without blocking the WPF interface.
+
+## Tutorial Foundation and Original Enhancements
+
+The initial implementation followed a multi-part C# chess tutorial. The repository was subsequently expanded with independently developed features including:
+
+- Computer-controlled Black player
+- Board evaluation and legal AI move selection
+- King-safety filtering
+- Check detection and notifications
+- Castling validation and execution
+- Captured-piece tracking and display
+- Improved game-state and UI coordination
 
 ## Tutorial Series
 
-This project was originally built by following the excellent tutorial series below:
-
-1. [Programming a Chess Game in C# | Part 1 - Project Setup](https://youtu.be/GEkSE6eZMGc?si=wLRZBIfxzYhr8Jny)
-2. [Programming a Chess Game in C# | Part 2 - Positions and Directions](https://youtu.be/KuAsKRn9XD0?si=c9tinalduM6eDOSW)
-3. [Programming a Chess Game in C# | Part 3 - Pieces & The Board](https://youtu.be/NUNlVjt82m8?si=D3l5AdSN8O-p82sF)
-4. [Programming a Chess Game in C# | Part 4 - Drawing the Board](https://youtu.be/Z1Zi41eiNGs?si=xNF-iZeh55_JUFt9)
-5. [Programming a Chess Game in C# | Part 5 - Generating Moves](https://youtu.be/RDD48hIgAqU?si=7YShhi_NNCnkcQJd)
-6. [Programming a Chess Game in C# | Part 6 - Generating Moves II](https://youtu.be/3z_EitUuTWI?si=EiZziwzdydU_mI3z)
-7. [Programming a Chess Game in C# | Part 7 - Handling Moves](https://youtu.be/cpGusMTczTQ?si=wnprhQ_Ly9Dq0WoW)
+1. [Project Setup](https://youtu.be/GEkSE6eZMGc)
+2. [Positions and Directions](https://youtu.be/KuAsKRn9XD0)
+3. [Pieces and the Board](https://youtu.be/NUNlVjt82m8)
+4. [Drawing the Board](https://youtu.be/Z1Zi41eiNGs)
+5. [Generating Moves](https://youtu.be/RDD48hIgAqU)
+6. [Generating Moves II](https://youtu.be/3z_EitUuTWI)
+7. [Handling Moves](https://youtu.be/cpGusMTczTQ)
 
 ## Future Improvements
 
-- Castling
+- Checkmate and stalemate detection
 - En passant
-- Pawn promotion UI improvements
+- Pawn-promotion selection UI
+- Deeper AI search such as minimax with alpha-beta pruning
 - Move history
-- Game save/load support
+- Save and load support
+- Automated tests for rule and AI behavior
